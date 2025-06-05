@@ -24,7 +24,8 @@ const FileSelector = ({
             padding: "10px",
             cursor: "pointer",
             fontFamily: "Inter",
-            backgroundColor: selectedFilename === filename ? "#e0e0e0" : "#fff",
+            backgroundColor:
+              selectedFilename === filename ? "#e0e0e0" : "black",
             borderBottom: "1px solid #ccc"
           }}
         >
