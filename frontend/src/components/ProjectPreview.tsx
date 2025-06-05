@@ -18,23 +18,14 @@ const ProjectPreview = ({ projectId, version }) => {
       >
         {urlThing}
       </div>
-      {version % 2 == 0 ? (
-        <iframe
-          src={urlThing}
-          style={{
-            width: "100%",
-            height: "100%"
-          }}
-        ></iframe>
-      ) : (
-        <iframe
-          src={urlThing}
-          style={{
-            width: "100%",
-            height: "100%"
-          }}
-        ></iframe>
-      )}
+      <iframe
+        key={version}
+        src={urlThing}
+        style={{
+          width: "100%",
+          height: "100%"
+        }}
+      ></iframe>
     </div>
   );
 };
