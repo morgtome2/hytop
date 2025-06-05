@@ -1,6 +1,5 @@
 const ProjectPreview = ({ projectId, version }) => {
   const urlThing = `${import.meta.env.VITE_BACKEND_URL}/pf/${projectId}/`;
-  const urlWithVersion = `${urlThing}?v=${version}`;
 
   return (
     <div
@@ -19,13 +18,23 @@ const ProjectPreview = ({ projectId, version }) => {
       >
         {urlThing}
       </div>
-      <iframe
-        src={urlWithVersion}
-        style={{
-          width: "100%",
-          height: "100%"
-        }}
-      ></iframe>
+      {version % 2 == 0 ? (
+        <iframe
+          src={urlThing}
+          style={{
+            width: "100%",
+            height: "100%"
+          }}
+        ></iframe>
+      ) : (
+        <iframe
+          src={urlThing}
+          style={{
+            width: "100%",
+            height: "100%"
+          }}
+        ></iframe>
+      )}
     </div>
   );
 };
