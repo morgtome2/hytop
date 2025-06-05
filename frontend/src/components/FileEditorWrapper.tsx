@@ -12,12 +12,14 @@ interface FileEditorWrapperProps {
   files: any[];
   currentlySelectedFilename: string;
   onFileEdited: (newContent: string) => void;
+  readOnly: boolean;
 }
 
 const FileEditorWrapper = ({
   files,
   currentlySelectedFilename,
-  onFileEdited
+  onFileEdited,
+  readOnly
 }: FileEditorWrapperProps) => {
   const fileEditorComponents = [];
   for (let i = 0; i < files.length; i++) {
@@ -27,6 +29,7 @@ const FileEditorWrapper = ({
         fileContent={currentFile.fileContent}
         fileType={currentFile.fileName.split(".").pop()}
         onFileEdited={onFileEdited}
+        readOnly={readOnly}
       ></FileEditor>
     );
     fileEditorComponents.push(editor);
